@@ -1,0 +1,17 @@
+<button [routerLink]="['/home']">Home</button>
+<h1 class="text-danger">Edit Author</h1>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <div class="col order-last">
+          <form (submit)="editAuthor(AuthorToEdit._id)">
+              <label>Title</label>
+              <input type="text" name="AuthorToEdit.name" [(ngModel)]="AuthorToEdit.name"><br>
+              <input type="submit" value="Save">
+            </form>
+      </div>
+    </div>
+  </div>
+</div>
+

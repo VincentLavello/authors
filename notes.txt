@@ -1,0 +1,22 @@
+            
+            home.html
+                       <button mat-raised-button color="primary">
+                <a [routerLink]="['/edit']", 1>Edit</a>
+            </button>
+            <button mat-raised-button color="primary">
+                <a [routerLink]="['/delete']" [queryParams]="1">Delete</a>
+            </button>
+            <button (click)="selectAuthorToEdit(Author._id)">Edit</button>
+            <button (click)="deleteAuthor(Author._id)">Delete</button>
+
+
+
+
+
+                <tr>
+        <td>Stephen King</td>
+        <td>
+            <button (click)="selectAuthorToEdit(Author._id)">Edit</button>
+            <button (click)="deleteAuthor(Author._id)">Delete</button>
+        </td>        
+        </tr>
