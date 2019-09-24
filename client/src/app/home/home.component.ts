@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service'; //from video
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
-
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -17,32 +15,20 @@ export class HomeComponent implements OnInit {
     private _httpService: HttpService 
     
     ) { }
-   Authors;
+   Pets;
     ngOnInit(){
-      this.getAuthorsFromService();
+      this.getPetsFromService();
     }
-    deleteAuthor(id) {
-      console.log(id);
-      const obs = this._httpService.deleteAuthor(id);
-      obs.subscribe(data => {
-        this.getAuthorsFromService();
-      });
-      
-    }
-    selectAuthorToEdit(id){
-      const obs = this._httpService.getAuthorById(id);
-      obs.subscribe(data => {
-        console.log(data);
-        // this.Author = data;
-        // this.AuthorToEdit = data;
-      });
-    }  
-    getAuthorsFromService(){
-        let observable = this._httpService.getAuthors();
+    getPetsFromService(){
+        let observable = this._httpService.getPets();
+       
         observable.subscribe(data => {
-          this.Authors = data;
-        console.log("Did we really Get our Authors from components?????!", data);
+          this.Pets = data;
+        // console.log("Did we really Get our Pets from components?????!", data);
         });
     }
+  goHome() {
+    this._router.navigate(['/home']);
+  }
 
 }

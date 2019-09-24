@@ -4,7 +4,7 @@ let mongoose = require('mongoose');
 
 // connect to mongodb
 // mongoose.connect("mongodb://localhost/tasks-api", {useNewUrlParser: true, useUnifiedTopology: true})
-mongoose.connect("mongodb://localhost/Authors", {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect("mongodb://localhost/PetShelterFinal", {useNewUrlParser: true, useUnifiedTopology: true})
 
 // create a variable that points to the models folder
 var models_path = path.join(__dirname, './../models');

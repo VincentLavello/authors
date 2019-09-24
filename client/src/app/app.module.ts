@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { NewComponent } from './new/new.component';
 import { EditComponent } from './edit/edit.component';
 import { ErrorComponent } from './error/error.component';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +18,14 @@ import { ErrorComponent } from './error/error.component';
     HomeComponent,
     NewComponent,
     EditComponent,
-    ErrorComponent
+    ErrorComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    RouterModule, // does this need to be here
     FormsModule  //<------------ forms
   ],
   providers: [HttpService],

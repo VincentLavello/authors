@@ -1,7 +1,34 @@
-<h1>New Author</h1>
+<div class="col-md-6">
+  <h1>New Pet </h1>
+  <a [routerLink]="['/home']"><< Back</a>
 <br>
-  <form (submit)="createAuthor()">
-    <label>Title</label>
-    <input type="text" name="newAuthor.name" [(ngModel)]="newAuthor.name">
-    <input type="submit" value="Create new Author">
+  <form (submit)="createPet()">
+    <div class="form-group" style="display: block">
+      <label>Name:</label><br>
+      <input type="text" name="newPet.name" [(ngModel)]="newPet.name">
+    </div>
+    <div class="form-group" style="display: block">
+        <label>Type of pet:</label><br>
+      <input type="text" name="newPet.type" [(ngModel)]="newPet.type">
+    </div>
+    <div class="form-group" style="display: block">
+        <label>Glowing description:</label><br>
+      <input type="text" name="newPet.desc" [(ngModel)]="newPet.desc">
+    </div>
+    <div class="form-group" style="display: block">
+      <label>Main Skill:</label><br>
+      <input type="text" name="newPet.skill1" [(ngModel)]="newPet.skill1">
+
+    </div>
+    <div class="form-group" style="display: block">
+        <label>Additional Skill:</label><br>
+      
+      <input type="text" name="newPet.skill2" [(ngModel)]="newPet.skill2">
+    </div>
+    <div class="form-group" style="display: block">
+        <label>He can do that too?:</label><br>
+      <input type="text" name="newPet.skill3" [(ngModel)]="newPet.skill3">
+    </div>
+    <input type="submit" value="Create new Pet">
   </form>
+</div>

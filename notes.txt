@@ -1,4 +1,21 @@
-            
+                <button mat-raised-button color="primary">
+                <a [routerLink]="['/edit', Pet._id]">Details</a>
+                </button>
+                <button (click)="deletePet(Pet._id)">Delete</button>            
+
+v              <form (submit)="DeletePet(Pet._id)">
+                    <input type="submit" value="Adopt">
+                </form>
+    deletePet(id) {
+      console.log("################", id);
+      const obs = this._httpService.deletePet(id);
+      obs.subscribe(data => {
+        this.getPetsFromService();
+      });
+      
+    }
+
+
             home.html
                        <button mat-raised-button color="primary">
                 <a [routerLink]="['/edit']", 1>Edit</a>

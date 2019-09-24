@@ -1,35 +1,46 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 // import { BehaviorSubject, observable } from 'rxjs';
 
 //what is in video:
 @Injectable({
      providedIn: 'root'
    })
+
+
   export class HttpService {
-        constructor(private _http: HttpClient) {
-    }
-  getAuthors(){
-    return this._http.get('/author');
+  
+  
+  constructor(private _http: HttpClient) {}
+  
+  getPets(){
+    return this._http.get('/pet');
   }
-  justclickthefuknbutton(data){
-    return this._http.get('/author', data);
-  }
+  
+  
+  LikePetByID(id) {
+    console.log("SERVICE.LikePetByID()", id);
 
-
-  getAuthorById(id) {
+    return this._http.get('/pet/like/' + id);
+    // return this._http.get(`/pet/like/${id}`);
     
-    return this._http.get(`/author/${id}`);
+  }
+  getPetById(id) {
+    console.log(id);
+    return this._http.get(`/pet/${id}`);
     
   }
-  editAuthorById(id, data) {
-    return this._http.put(`/author/${id}`, data);
+  editPetById(id, data) {
+    return this._http.put(`/pet/${id}`, data);
   }
-  postAuthor(data) {
-    return this._http.post(`/author`, data);
+  postPet(data) {
+    return this._http.post(`/pet`, data);
   }
 
-  deleteAuthor(id) {
-    return this._http.delete(`/author/${id}`);
+  deletePet(id) {
+    console.log("@@HERE TO PEEK A BOOO", id); //success so far
+    return this._http.delete(`/pet/${id}`);
+    // return this._http.delete("/pet/" + id);
   }
 }

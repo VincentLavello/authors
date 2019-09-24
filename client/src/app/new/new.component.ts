@@ -17,20 +17,25 @@ export class NewComponent implements OnInit {
     ) { 
     
   }
-  Authors;
-  newAuthor: any = {
-    name: ''
-  };
+  Pets;
+  newPet: any =    {
+    "name": "",
+    "type": "",
+    "desc": "",
+    "skill1": "",
+    "skill2": "",
+    "skill3": ""
+}
   ngOnInit() {
   }
   goHome() {
     this._router.navigate(['/home']);
   }
-  createAuthor() {
-    console.log(this.newAuthor);
-    const obs = this._httpService.postAuthor(this.newAuthor);
-    obs.subscribe((newlyCreatedAuthor: any) => {
-      console.log(newlyCreatedAuthor);
+  createPet() {
+    console.log(this.newPet);
+    const obs = this._httpService.postPet(this.newPet);
+    obs.subscribe((newlyCreatedPet: any) => {
+      console.log(newlyCreatedPet);
       this.goHome();
     });
   }

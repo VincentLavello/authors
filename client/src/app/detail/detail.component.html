@@ -1,0 +1,15 @@
+<h1>Checkout this {{viewThisPet.type}}:</h1> 
+<a [routerLink]="['/home']"><< Back</a>
+
+<ul>
+    <li>Name: {{viewThisPet.name}} </li>
+    <li>{{viewThisPet.desc}}</li>
+    <span><u><h4>Skills include:</h4></u></span>
+    <li>{{viewThisPet.skill1}}</li>
+    <li>{{viewThisPet.skill2}}</li>
+    <li>{{viewThisPet.skill3}}</li>
+</ul> 
+<label>Take'em <button (click)="DeletePet(viewThisPet._id)">Adopt</button> or leav'em...Likes: ({{viewThisPet.likes}})  <button (click)="LikePet(viewThisPet._id)">Like'em</button>    </label>
+      
+
+ 
